@@ -7,10 +7,10 @@ import { FormikValues } from "formik";
 export const LoginForm = () => {
   const fields = [
     {
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      label: "Email",
+      name: "username",
+      type: "text",
+      placeholder: "username",
+      label: "username",
       className: "p-10",
     },
     {
@@ -21,13 +21,16 @@ export const LoginForm = () => {
     },
   ];
 
-  const validationSchema = Yup.object().shape({});
+  const validationSchema = Yup.object().shape({
+    username: Yup.string().required("Required"),
+    password: Yup.string().required("Required"),
+  });
   const onSubmit = (values: FormikValues) => {
     console.log(values);
   };
 
   const initialValues = {
-    email: "",
+    username: "",
     password: "",
   };
   
