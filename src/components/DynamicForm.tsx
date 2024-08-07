@@ -1,8 +1,9 @@
 "use client";
-import { error } from "console";
 import { Field, Form, Formik } from "formik";
 import React from "react";
-import { Button } from "./Button";
+import { Button } from "./button/Button";
+import { Input } from "@nextui-org/react";
+import { IButtonProps } from "./button/buttonProps";
 
 interface IFieldProps {
   type: string;
@@ -22,11 +23,21 @@ interface IDynamicFormProps {
   validationSchema?: any;
   onSubmit?: any;
   initialValues?: any;
+  labelInsideInput?: boolean;
+  submitButton?: IButtonProps;
 }
 
 export const DynamicForm = (props: IDynamicFormProps) => {
-  const { className, fields, validationSchema, onSubmit, initialValues } =
-    props;
+  const {
+    className,
+    fields,
+    validationSchema,
+    onSubmit,
+    initialValues,
+    labelInsideInput,
+    submitButton,
+  } = props;
+
   return (
     <Formik
       initialValues={initialValues}
@@ -34,23 +45,39 @@ export const DynamicForm = (props: IDynamicFormProps) => {
       onSubmit={onSubmit}
     >
       {({ values, handleSubmit, errors }) => (
-        <Form onSubmit={handleSubmit} className={className} autoComplete="off">
+        <Form
+          onSubmit={handleSubmit}
+          className={`my-4 ${className}`}
+          autoComplete="off"
+        >
           {fields.map((field) => (
             <div className={field.className} key={field.id}>
-              <label htmlFor={field.id}>{field.label}</label>
+              {!labelInsideInput && (
+                <label htmlFor={field.id}>{field.label}</label>
+              )}
               <Field
+                label={labelInsideInput ? field.label : undefined}
+                component={Input}
                 type={field.type}
                 name={field.name}
                 id={field.id}
                 as={field.as}
                 value={field.value}
-                placeholder={field.placeholder}
               />
               {/* {errors[field.name!] && <small>error</small>} */}
             </div>
           ))}
-          {JSON.stringify(values)}
-          <Button type="submit">Submit</Button>
+          <div className="flex justify-end mt-10">
+            <Button
+              type="submit"
+              color={submitButton?.color}
+              size={submitButton?.size}
+              variant={submitButton?.variant}
+              radius={submitButton?.radius}
+            >
+              {submitButton?.text || submitButton?.children}
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>

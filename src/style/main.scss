@@ -1,0 +1,17 @@
+@import "./auth";
+.globe {
+  .scene-container {
+    width: 100% !important;
+    height: auto !important;
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+      transform: scale(1.8) !important;
+    }
+  }
+}
+.auth-form {
+  .bg-default-100 {
+    background-color: rgba($color: white, $alpha: 0.4) !important;
+  }
+}

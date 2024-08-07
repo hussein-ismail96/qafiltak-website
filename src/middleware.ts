@@ -1,14 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from 'next-auth/react';
+import { getServerSession } from "next-auth";
 export function middleware(req: NextRequest) {
-  const {  origin } = req.nextUrl;
-  const session = getSession();
+  const { origin } = req.nextUrl;
+
   // Check if the user is authenticated (for demonstration, assume a cookie named 'auth' is set when logged in)
-
-
+  const isAuthorized = true;
+  console.log("isAuthorized:", isAuthorized);
+  console.log("Redirect URL:", `${origin}/auth`);
+  const url = new URL(`auth`, origin);
   // If the user is not authenticated and is trying to access a protected page, redirect to login
-  if (!session) {
-    return NextResponse.redirect(`${origin}/login`);
+  if (!isAuthorized) {
+    return NextResponse.rewrite(url);
   }
 
   // Allow the request to proceed

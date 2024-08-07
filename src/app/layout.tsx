@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Poppins } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
-import { SessionProvider } from "next-auth/react";
 import AuthProvider from "@/AuthProvider";
+import "./globals.css";
+import "@style";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,12 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <NextUIProvider>
-      <AuthProvider>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-      </AuthProvider>
-    </NextUIProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <AuthProvider>
+          <NextUIProvider>{children}</NextUIProvider>
+        </AuthProvider>
+      </body>
+    </html>
   );
 }
