@@ -1,7 +1,7 @@
 "use client";
-import dynamic from "next/dynamic";
 import React from "react";
-import { IGlobeData } from "./GlobeTypes";
+import dynamic from "next/dynamic";
+import {IGlobeData} from "./globeProps";
 
 const GlobeComp = dynamic(() => import("react-globe.gl"), { ssr: false });
 

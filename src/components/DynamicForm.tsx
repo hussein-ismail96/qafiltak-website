@@ -2,11 +2,11 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import { Button } from "./button/Button";
-import { Input } from "@nextui-org/react";
+import {Input}  from "./Input";
 import { IButtonProps } from "./button/buttonProps";
 
 interface IFieldProps {
-  type: string;
+  type?: string;
   as?: string;
   name?: string;
   id?: string;
@@ -15,6 +15,7 @@ interface IFieldProps {
   label?: string;
   placeholder?: string;
   className?: string;
+  options?:Array<string>;
 }
 
 interface IDynamicFormProps {
@@ -57,8 +58,10 @@ export const DynamicForm = (props: IDynamicFormProps) => {
               )}
               <Field
                 label={labelInsideInput ? field.label : undefined}
+                placeholder={field.placeholder}
                 component={Input}
                 type={field.type}
+                options={field.options}
                 name={field.name}
                 id={field.id}
                 as={field.as}
@@ -74,6 +77,7 @@ export const DynamicForm = (props: IDynamicFormProps) => {
               size={submitButton?.size}
               variant={submitButton?.variant}
               radius={submitButton?.radius}
+              className={submitButton?.className}
             >
               {submitButton?.text || submitButton?.children}
             </Button>

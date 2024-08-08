@@ -11,7 +11,22 @@
     rgba(1, 0, 10, 1) 89%,
     rgba(10, 10, 92, 1) 100%
   );
+ @media screen and (max-width:768px) {
+  .auth-side{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0 10%;
+    .auth-form{
+      padding: 2rem;
+      background-color: rgba(white,0.4);
+      border-radius: 10px;
+    }
+  }
+ }
 }
+
 .galaxy {
   position: fixed;
   top: 50%;
