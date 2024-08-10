@@ -11,20 +11,33 @@
     rgba(1, 0, 10, 1) 89%,
     rgba(10, 10, 92, 1) 100%
   );
- @media screen and (max-width:768px) {
-  .auth-side{
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    padding: 0 10%;
-    .auth-form{
-      padding: 2rem;
-      background-color: rgba(white,0.4);
-      border-radius: 10px;
+  div[data-slot="input-wrapper"] {
+    background-color: rgba($color: white, $alpha: 0.4);
+    div[data-slot="input"] {
+      ::placeholder {
+        color: red;
+        opacity: 1;
+      }
+
+      &::-ms-input-placeholder {
+        color: red;
+      }
     }
   }
- }
+  @media screen and (max-width: 768px) {
+    .auth-side {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 0 10%;
+      .auth-form {
+        padding: 2rem;
+        background-color: rgba(white, 0.4);
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
 .galaxy {
@@ -86,9 +99,9 @@
     48vw 9vh 1px 1px #fff, -43vw 30vh 1px 1px #fff, 29vw -12vh 1px 1px #fff,
     -48vw 13vh 1px 0px #fff, -42vw 32vh 1px 1px #fff, 34vw 15vh 1px 1px #fff,
     29vw -37vh 1px 1px #fff, 28vw 2vh 0px 0px #fff;
-  animation: zoom 17s alternate infinite;
+  animation: galaxy 17s alternate infinite;
 }
-@keyframes zoom {
+@keyframes galaxy {
   0% {
     transform: scale(1);
   }
