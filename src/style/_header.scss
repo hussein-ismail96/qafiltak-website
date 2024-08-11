@@ -1,0 +1,12 @@
+.header-wrapper {
+  position: sticky;
+  top: 40px;
+  left: 0;
+  z-index: 1000;
+
+  .header {
+    background-color: rgba($color: #ffffff, $alpha: 0.64);
+    border-radius: 20px;
+    padding: 20px 40px;
+  }
+}

@@ -133,6 +133,12 @@ export const FormSteps = (props: IDynamicFormProps) => {
               </Button>
             ) : (
               <Button
+                type="button"
+                color={nextButton?.color}
+                size={nextButton?.size}
+                variant={nextButton?.variant}
+                radius={nextButton?.radius}
+                className={nextButton?.className}
                 onClick={async () => {
                   const error = await validateField("role");
                   console.log(error);
@@ -144,7 +150,6 @@ export const FormSteps = (props: IDynamicFormProps) => {
               </Button>
             )}
           </div>
-          <span className="text-red-500">{step}</span>
         </Form>
       )}
     </Formik>

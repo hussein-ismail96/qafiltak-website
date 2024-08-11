@@ -2,7 +2,7 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import { Button } from "./button/Button";
-import {Input}  from "./Input";
+import { Input } from "./Input";
 import { IButtonProps } from "./button/buttonProps";
 
 interface IFieldProps {
@@ -15,7 +15,9 @@ interface IFieldProps {
   label?: string;
   placeholder?: string;
   className?: string;
-  options?:Array<string>;
+  options?: Array<string>;
+  startContent?: JSX.Element;
+  endContent?: JSX.Element;
 }
 
 interface IDynamicFormProps {
@@ -66,6 +68,8 @@ export const DynamicForm = (props: IDynamicFormProps) => {
                 id={field.id}
                 as={field.as}
                 value={field.value}
+                startContent={field.startContent}
+                endContent={field.endContent}
               />
               {/* {errors[field.name!] && <small>error</small>} */}
             </div>

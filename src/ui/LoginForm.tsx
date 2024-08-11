@@ -3,57 +3,42 @@ import React from "react";
 import * as Yup from "yup";
 import { FormikValues } from "formik";
 import { signIn } from "next-auth/react";
-import { FormSteps } from "@/components";
+import { DynamicForm, FormSteps } from "@/components";
+import Image from "next/image";
 
 export const LoginForm = () => {
   const fields = [
-    [
-      {
-        name: "role",
-        type: "select",
-        label: "Continue as",
-        options: ["user", "vendor", "HR", "influencer", "montij"],
-        className: "mb-10 max-w-md",
-        placeholder: "choose an option",
-      },
-    ],
-    [
-      {
-        name: "username",
-        type: "text",
-        placeholder: "First and last name",
-        label: "Your name",
-        className: "mb-5 w-1/2",
-      },
-      {
-        name: "email",
-        type: "email",
-        placeholder: "Email",
-        label: "Email",
-        className: "mb-5 w-1/2",
-      },
-      {
-        name: "mobile",
-        type: "number",
-        placeholder: "Enter number",
-        label: "Mobile number",
-        className: "mb-5 w-full",
-      },
-      {
-        name: "password",
-        type: "password",
-        placeholder: "At least 6 characters",
-        label: "Password",
-        className: "mb-5 w-full",
-      },
-      {
-        name: "password",
-        type: "password",
-        placeholder: "Re-enter password",
-        label: "Re-enter password",
-        className: "mb-5 w-full",
-      },
-    ],
+    {
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      label: "Email",
+      className: "mb-5",
+      startContent: (
+        <Image
+          src="/images/svgs/email.svg"
+          alt="email"
+          width={24}
+          height={24}
+        />
+      ),
+    },
+
+    {
+      name: "password",
+      type: "password",
+      placeholder: "At least 6 characters",
+      label: "Password",
+      className: "mb-5",
+      startContent: (
+        <Image
+          src="/images/svgs/password.svg"
+          alt="email"
+          width={20}
+          height={20}
+        />
+      ),
+    },
   ];
 
   const validationSchema = Yup.object().shape({
@@ -68,12 +53,12 @@ export const LoginForm = () => {
   };
 
   const initialValues = {
-    username: "",
+    email: "",
     password: "",
   };
 
   return (
-    <FormSteps
+    <DynamicForm
       fields={fields}
       onSubmit={onSubmit}
       validationSchema={validationSchema}

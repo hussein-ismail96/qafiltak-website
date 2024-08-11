@@ -1,6 +1,5 @@
 .auth-page {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
@@ -13,14 +12,15 @@
   );
   div[data-slot="input-wrapper"] {
     background-color: rgba($color: white, $alpha: 0.4);
-    div[data-slot="input"] {
-      ::placeholder {
-        color: red;
+    input {
+      color: #f7f0f0;
+      &::placeholder {
+        color: #f7f0f0;
         opacity: 1;
       }
 
       &::-ms-input-placeholder {
-        color: red;
+        color: #f7f0f0;
       }
     }
   }

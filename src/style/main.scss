@@ -1,3 +1,19 @@
 @import "./auth";
 @import "./globe";
 @import "./not-found";
+@import "header";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90% !important;
+  }
+}
