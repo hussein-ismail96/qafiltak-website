@@ -4,7 +4,7 @@ export function middleware(req: NextRequest) {
   const { origin } = req.nextUrl;
 
   // Check if the user is authenticated (for demonstration, assume a cookie named 'auth' is set when logged in)
-  const isAuthorized = true;
+  const isAuthorized = false;
   console.log("isAuthorized:", isAuthorized);
   console.log("Redirect URL:", `${origin}/auth`);
   const url = new URL(`auth/sign-up`, origin);
@@ -16,3 +16,7 @@ export function middleware(req: NextRequest) {
   // Allow the request to proceed
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: "/",
+};

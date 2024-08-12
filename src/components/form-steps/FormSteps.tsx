@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, useFormikContext } from "formik";
 import { Button, IButtonProps, Input } from "@components";
 
 interface IFieldProps {
@@ -26,6 +26,7 @@ interface IDynamicFormProps {
   labelInsideInput?: boolean;
   submitButton?: IButtonProps;
   nextButton?: IButtonProps;
+  ActionComponent?: React.ComponentType<any>;
 }
 
 export const FormSteps = (props: IDynamicFormProps) => {
@@ -38,6 +39,7 @@ export const FormSteps = (props: IDynamicFormProps) => {
     labelInsideInput,
     submitButton,
     nextButton,
+    ActionComponent,
   } = props;
 
   const [step, setStep] = useState(0);
@@ -129,8 +131,27 @@ export const FormSteps = (props: IDynamicFormProps) => {
                 radius={submitButton?.radius}
                 className={submitButton?.className}
               >
-                Submit
+                {submitButton?.text || submitButton?.children}
               </Button>
+            ) : ActionComponent ? (
+              <ActionComponent>
+                <Button
+                  type="button"
+                  color={nextButton?.color}
+                  size={nextButton?.size}
+                  variant={nextButton?.variant}
+                  radius={nextButton?.radius}
+                  className={nextButton?.className}
+                  onClick={async () => {
+                    const error = await validateField("role");
+                    console.log(error);
+                    !error && setStep((step) => step + 1);
+                    // setStep((step) => step + 1);
+                  }}
+                >
+                  {nextButton?.text || nextButton?.children}
+                </Button>
+              </ActionComponent>
             ) : (
               <Button
                 type="button"
@@ -146,7 +167,7 @@ export const FormSteps = (props: IDynamicFormProps) => {
                   // setStep((step) => step + 1);
                 }}
               >
-                Next
+                {nextButton?.text || nextButton?.children}
               </Button>
             )}
           </div>

@@ -3,7 +3,7 @@ import React from "react";
 import * as Yup from "yup";
 import { FormikValues } from "formik";
 import { signIn } from "next-auth/react";
-import { FormSteps } from "@/components";
+import { Button, FormSteps } from "@/components";
 
 export const SignUpForm = () => {
   const fields = [
@@ -82,8 +82,26 @@ export const SignUpForm = () => {
       submitButton={{
         className: "text-white flex",
         text: "Sign in",
-        variant: "bordered",
+        color: "primary",
       }}
+      nextButton={{
+        text: "Next",
+        color: "primary",
+        className: "text-white flex px-12",
+      }}
+      ActionComponent={({ children }: { children: React.ReactNode }) => (
+        <div className="flex gap-4">
+          <Button
+            as={"a"}
+            href={"/auth/login"}
+            variant="bordered"
+            className="text-white px-12"
+          >
+            Sign in
+          </Button>
+          {children}
+        </div>
+      )}
     />
   );
 };

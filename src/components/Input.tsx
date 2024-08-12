@@ -12,6 +12,7 @@ interface InputProps {
     | "text"
     | "number"
     | "email"
+    | "tel"
     | "password"
     | "select"
     | "radio"
@@ -36,6 +37,7 @@ export const Input = (props: InputProps) => {
     case "number":
     case "email":
     case "password":
+    case "tel":
       input = <NextUIInput type={type} label={label} {...rest} />;
       break;
     case "select":
