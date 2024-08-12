@@ -4,7 +4,7 @@ import {
   Select as NextUISelect,
   SelectItem as Select,
   Radio as NextUIRadio,
-  checkbox as NextUICheckbox,
+  Checkbox as NextUICheckbox,
 } from "@nextui-org/react";
 
 interface InputProps {
@@ -28,7 +28,7 @@ interface InputProps {
 }
 
 export const Input = (props: InputProps) => {
-  const { type, options, ...rest } = props;
+  const { type, options, label, ...rest } = props;
   let input = null;
 
   switch (type) {
@@ -36,7 +36,7 @@ export const Input = (props: InputProps) => {
     case "number":
     case "email":
     case "password":
-      input = <NextUIInput type={type} {...rest} />;
+      input = <NextUIInput type={type} label={label} {...rest} />;
       break;
     case "select":
       input = (
@@ -56,9 +56,9 @@ export const Input = (props: InputProps) => {
     //    case "radio":
     //       input = <NextUIRadio {...rest} >kkk</NextUIRadio>;
     //       break;
-    //    case "checkbox":
-    //       input = <NextUICheckbox {...rest} />;
-    //       break;
+    case "checkbox":
+      input = <NextUICheckbox {...rest}>{label}</NextUICheckbox>;
+      break;
   }
 
   return <React.Fragment>{input}</React.Fragment>;

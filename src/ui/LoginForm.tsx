@@ -13,7 +13,7 @@ export const LoginForm = () => {
       type: "email",
       placeholder: "Email",
       label: "Email",
-      className: "mb-5",
+      className: "mb-10",
       startContent: (
         <Image
           src="/images/svgs/email.svg"
@@ -30,6 +30,21 @@ export const LoginForm = () => {
       placeholder: "At least 6 characters",
       label: "Password",
       className: "mb-5",
+      startContent: (
+        <Image
+          src="/images/svgs/password.svg"
+          alt="email"
+          width={20}
+          height={20}
+        />
+      ),
+    },
+    {
+      name: "remember",
+      type: "checkbox",
+      label: "remember me",
+      size: "sm" as "sm",
+      className: "mb-5 text-white",
       startContent: (
         <Image
           src="/images/svgs/password.svg"
@@ -65,9 +80,10 @@ export const LoginForm = () => {
       initialValues={initialValues}
       className="text-white"
       submitButton={{
-        className: "text-white flex",
-        text: "Sign in",
-        variant: "bordered",
+        className: "text-white w-full",
+        text: "Login to your account",
+        radius: "sm",
+        color: "primary",
       }}
     />
   );

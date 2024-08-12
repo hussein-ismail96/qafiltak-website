@@ -7,10 +7,10 @@ export function middleware(req: NextRequest) {
   const isAuthorized = true;
   console.log("isAuthorized:", isAuthorized);
   console.log("Redirect URL:", `${origin}/auth`);
-  const url = new URL(`auth`, origin);
+  const url = new URL(`auth/sign-up`, origin);
   // If the user is not authenticated and is trying to access a protected page, redirect to login
   if (!isAuthorized) {
-    return NextResponse.rewrite(url);
+    return NextResponse.redirect(url);
   }
 
   // Allow the request to proceed

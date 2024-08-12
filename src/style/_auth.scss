@@ -12,8 +12,12 @@
   );
   div[data-slot="input-wrapper"] {
     background-color: rgba($color: white, $alpha: 0.4);
-    input {
-      color: #f7f0f0;
+    label {
+      color: #f7f0f0 !important;
+    }
+
+    input[data-slot="input"] {
+      color: #f7f0f0 !important;
       &::placeholder {
         color: #f7f0f0;
         opacity: 1;
@@ -24,6 +28,7 @@
       }
     }
   }
+
   @media screen and (max-width: 768px) {
     .auth-side {
       position: absolute;
