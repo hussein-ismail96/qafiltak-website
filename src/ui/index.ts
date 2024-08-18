@@ -1,3 +1,2 @@
-export { LoginForm } from "./LoginForm";
-export { SignUpForm } from "./SignUpForm";
-export { AuthGlobe } from "./AuthGlobe";
+export * from "./auth";
+export * from "./home";

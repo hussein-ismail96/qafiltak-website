@@ -1,11 +1,11 @@
 .globe {
-    .scene-container {
-      width: 100% !important;
+  .scene-container {
+    width: 100% !important;
+    height: auto !important;
+    canvas {
+      max-width: 100% !important;
       height: auto !important;
-      canvas {
-        width: 100% !important;
-        height: auto !important;
-        transform: scale(1.8) !important;
-      }
+      transform: scale(1.8) !important;
     }
   }
+}
