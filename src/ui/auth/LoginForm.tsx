@@ -9,10 +9,11 @@ import Image from "next/image";
 export const LoginForm = () => {
   const fields = [
     {
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      label: "Email",
+      name: "userName",
+      type: "text",
+      placeholder: "userName",
+      label: "userName",
+      className: "mb-10",
       startContent: (
         <Image
           src="/images/svgs/email.svg"
@@ -56,17 +57,19 @@ export const LoginForm = () => {
   ];
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Required"),
+    userName: Yup.string().required("Required"),
     password: Yup.string().required("Required"),
   });
   const onSubmit = async (values: FormikValues) => {
-    // const result = await signIn("credentials", values);
-    // console.log(result);
-    alert(values);
+    await signIn("credentials", {
+      username: values.userName,
+      password: values.password,
+      callbackUrl: "/",
+    });
   };
 
   const initialValues = {
-    email: "",
+    userName: "",
     password: "",
   };
 

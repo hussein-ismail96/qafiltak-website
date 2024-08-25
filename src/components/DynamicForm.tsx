@@ -1,5 +1,5 @@
 "use client";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Field, Form, Formik, ErrorMessage } from "formik";
 import React, { ReactNode } from "react";
 import { Button } from "./button/Button";
 import { Input } from "./Input";
@@ -59,8 +59,8 @@ export const DynamicForm = (props: IDynamicFormProps) => {
             <div key={field.name} className="pb-4">
               <Field
                 label={field.label}
+                className="w-full p-2 rounded"
                 placeholder={field.placeholder}
-                className={field.className}
                 as={Input}
                 type={field.type}
                 options={field.options}
