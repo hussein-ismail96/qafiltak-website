@@ -1,14 +1,14 @@
 "use client";
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { ReactNode } from "react";
 import { Button } from "./button/Button";
 import { Input } from "./Input";
 import { IButtonProps } from "./button/buttonProps";
 
 interface IFieldProps {
-  type?: string;
+  type: string;
   as?: string;
-  name?: string;
+  name: string;
   id?: string;
   value?: string;
   onChange?: any;
@@ -26,7 +26,7 @@ interface IDynamicFormProps {
   className?: string;
   fields: Array<IFieldProps>;
   validationSchema?: any;
-  onSubmit?: any;
+  onSubmit: any;
   initialValues?: any;
   submitButton?: IButtonProps;
   ActionComponent?: React.ComponentType<any>;
@@ -56,26 +56,25 @@ export const DynamicForm = (props: IDynamicFormProps) => {
           autoComplete="off"
         >
           {fields.map((field) => (
-            <div className={field.className} key={field.id}>
-              {/* {!labelInsideInput && (
-                <label htmlFor={field.id}>{field.label}</label>
-              )} */}
+            <div key={field.name} className="pb-4">
               <Field
                 label={field.label}
                 placeholder={field.placeholder}
-                component={Input}
+                className={field.className}
+                as={Input}
                 type={field.type}
                 options={field.options}
                 name={field.name}
                 labelPlacement={field.labelPlacement ?? "outside"}
                 id={field.id}
                 size={field.size}
-                as={field.as}
                 value={field.value}
                 startContent={field.startContent}
                 endContent={field.endContent}
               />
-              {/* {errors[field.name!] && <small>error</small>} */}
+              <span className="text-red-500">
+                <ErrorMessage name={field.name} />
+              </span>
             </div>
           ))}
           {ActionComponent ? (

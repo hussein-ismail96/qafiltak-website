@@ -13,7 +13,6 @@ export const LoginForm = () => {
       type: "email",
       placeholder: "Email",
       label: "Email",
-      className: "mb-10",
       startContent: (
         <Image
           src="/images/svgs/email.svg"
@@ -57,8 +56,7 @@ export const LoginForm = () => {
   ];
 
   const validationSchema = Yup.object().shape({
-    role: Yup.string().required("Required"),
-    username: Yup.string().required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required"),
   });
   const onSubmit = async (values: FormikValues) => {
