@@ -1,0 +1,20 @@
+{
+  "en": [
+    { "name": "Home", "href": "/", "className": "text-center" },
+    { "name": "Qawafil", "href": "#qawafil", "className": "text-center" },
+    { "name": "Montij", "href": "#montij", "className": "text-center" },
+    { "name": "Human Resources", "href": "#hr", "className": "text-center" },
+    { "name": "Influencer", "href": "#influencer", "className": "text-center" },
+    { "name": "About", "href": "#about", "className": "text-center" },
+    { "name": "Contact us", "href": "#contact", "className": "text-center" }
+  ],
+  "ar": [
+    { "name": "الرئيسية", "href": "/", "className": "text-center" },
+    { "name": "قوافل", "href": "#qawafil", "className": "text-center" },
+    { "name": "منتج", "href": "#montij", "className": "text-center" },
+    { "name": "الموارد البشرية", "href": "#hr", "className": "text-center" },
+    { "name": "المؤثرون", "href": "#influencer", "className": "text-center" },
+    { "name": "عنا", "href": "#about", "className": "text-center" },
+    { "name": "تواصل معنا", "href": "#contact", "className": "text-center" }
+  ]
+}

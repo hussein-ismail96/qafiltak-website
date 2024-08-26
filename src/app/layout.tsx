@@ -5,7 +5,6 @@ import AuthProvider from "@/AuthProvider";
 import "./globals.css";
 import "@style";
 
-
 const inter = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,11 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main>
         <AuthProvider>
           <NextUIProvider>{children}</NextUIProvider>
         </AuthProvider>
-        </main>
       </body>
     </html>
   );

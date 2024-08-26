@@ -3,10 +3,28 @@
   top: 40px;
   left: 0;
   z-index: 1000;
+}
+.main-header-wrapper {
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  z-index: 1000;
+}
 
+.header-wrapper,
+.main-header-wrapper {
   .header {
     background-color: rgba($color: #ffffff, $alpha: 0.64);
     border-radius: 20px;
     padding: 20px 40px;
+  }
+}
+
+nav {
+  .active {
+    background-color: #f3f3f3;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
   }
 }

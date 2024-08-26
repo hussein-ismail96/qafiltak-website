@@ -18,6 +18,7 @@ interface InputProps {
     | "radio"
     | "checkbox";
   name: string;
+  id?: string;
   label?: string;
   className?: string;
   placeholder?: string;
@@ -29,7 +30,7 @@ interface InputProps {
 }
 
 export const Input = (props: InputProps) => {
-  const { type, options, label, ...rest } = props;
+  const { type, options, label, className, ...rest } = props;
   let input = null;
 
   switch (type) {
@@ -38,7 +39,14 @@ export const Input = (props: InputProps) => {
     case "email":
     case "password":
     case "tel":
-      input = <NextUIInput type={type} label={label} {...rest} />;
+      input = (
+        <NextUIInput
+          type={type}
+          className={`input ${className}`}
+          label={label}
+          {...rest}
+        />
+      );
       break;
     case "select":
       input = (
@@ -59,7 +67,13 @@ export const Input = (props: InputProps) => {
     //       input = <NextUIRadio {...rest} >kkk</NextUIRadio>;
     //       break;
     case "checkbox":
-      input = <NextUICheckbox {...rest}>{label}</NextUICheckbox>;
+      input = (
+        <NextUICheckbox {...rest} id={props.id}>
+          <label className={className} htmlFor={props.id}>
+            {label}
+          </label>
+        </NextUICheckbox>
+      );
       break;
   }
 

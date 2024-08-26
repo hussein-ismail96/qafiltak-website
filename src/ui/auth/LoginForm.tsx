@@ -45,6 +45,7 @@ export const LoginForm = () => {
       label: "remember me",
       size: "sm" as "sm",
       className: "mb-5 text-white",
+      id: "remember",
       startContent: (
         <Image
           src="/images/svgs/password.svg"

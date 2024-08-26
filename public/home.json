@@ -1,0 +1,100 @@
+{
+  "mainBanner": {
+    "en": {
+      "header": "Website 3 line short description here",
+      "subHeader": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "cta": "Discover more",
+      "bgImage": "/images/home/main.jpg"
+    },
+    "ar": {
+      "header": "Website 3 line short description here",
+      "subHeader": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "cta": "Discover more",
+      "bgImage": "/images/home/main.jpg"
+    }
+  },
+  "qwafil": {
+    "en": {
+      "header": "Qawafil",
+      "subHeader": "Discover your dreams",
+      "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+      "cta": "Discover all qawafil",
+      "departments": [
+        {
+          "name": "Medical",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/medical.png"
+        },
+        {
+          "name": "Home",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/home.png"
+        },
+        {
+          "name": "Industrial",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/industrial.png"
+        },
+        {
+          "name": "Electrical",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/electrical.png"
+        }
+      ]
+    },
+    "ar": {
+      "header": "Qwafil",
+      "subHeader": "Discover your dreams",
+      "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+      "cta": "Discover all qwafil",
+      "departments": [
+        {
+          "name": "Medical",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/medical.png"
+        },
+        {
+          "name": "Home",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/home.png"
+        },
+        {
+          "name": "Industrial",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/industrial.png"
+        },
+        {
+          "name": "Electrical",
+          "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+          "imgSrc": "/images/home/qwafil/electrical.png"
+        }
+      ]
+    }
+  },
+  "influencers": {
+    "en": {
+      "imgSrc": "/images/home/influencers/boy.png",
+      "header": "HEADER ABOUT 2 LINES DESCRIPTION ABOUT INFLUENCER",
+      "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+      "cta": "GET IN TOUCH"
+    },
+    "ar": {
+      "imgSrc": "/images/home/influencers/boy.png",
+      "header": "HEADER ABOUT 2 LINES DESCRIPTION ABOUT INFLUENCER",
+      "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
+      "cta": "GET IN TOUCH"
+    }
+  },
+  "about": {
+    "en": {
+      "imgSrc": "/images/home/about/2030.jpg",
+      "header": "What we do ?",
+      "description": "Lorem ipsum dolor sit amet consectetur. Molestie volutpat integer habitant et parturient nisl pellentesque sem. In posuere etiam aenean integer suspendisse. Nam aliquam in aenean vel rhoncus vitae. Enim leo morbi fermentum sit ultrices lacus mi. Nunc pharetra eleifend mi duis sed. A at ut justo montes nibh egestas lorem lectus ac. Adipiscing aliquam id sagittis urna suspendisse turpis venenatis consequat. Arcu amet fringilla viverra quis morbi. Mi sagittis ut commodo cursus sagittis convallis pellentesque in. Neque venenatis ac hac sed velit blandit eget nisl tellus. Mattis aliquet quis sit tincidunt nisl ipsum sem."
+    },
+    "ar": {
+      "imgSrc": "/images/home/about/2030.jpg",
+      "header": "What we do ?",
+      "description": "Lorem ipsum dolor sit amet consectetur. Molestie volutpat integer habitant et parturient nisl pellentesque sem. In posuere etiam aenean integer suspendisse. Nam aliquam in aenean vel rhoncus vitae. Enim leo morbi fermentum sit ultrices lacus mi. Nunc pharetra eleifend mi duis sed. A at ut justo montes nibh egestas lorem lectus ac. Adipiscing aliquam id sagittis urna suspendisse turpis venenatis consequat. Arcu amet fringilla viverra quis morbi. Mi sagittis ut commodo cursus sagittis convallis pellentesque in. Neque venenatis ac hac sed velit blandit eget nisl tellus. Mattis aliquet quis sit tincidunt nisl ipsum sem."
+    }
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@nextui-org/button";
+import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { HTMLProps } from "react";
@@ -17,12 +18,18 @@ interface INavLinksProps extends HTMLProps<HTMLDivElement> {
 
 export const NavLinks = (props: INavLinksProps) => {
   const pathname = usePathname();
-  
+
   return (
     <nav className={props.className} {...props}>
       {props.shape === "link"
         ? props.links?.map((link) => (
-            <Link href={link.href} className={link.className} key={link.name}>
+            <Link
+              href={link.href}
+              className={clsx(link.className, {
+                active: pathname === link.href,
+              })}
+              key={link.name}
+            >
               {link.name}
             </Link>
           ))
@@ -30,7 +37,9 @@ export const NavLinks = (props: INavLinksProps) => {
             <Button
               as="a"
               href={link.href}
-              className={link.className}
+              className={clsx(link.className, {
+                active: pathname === link.href,
+              })}
               key={link.name}
             >
               {link.name}

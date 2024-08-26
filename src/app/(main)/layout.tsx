@@ -1,36 +1,43 @@
-import { Button, NavLinks } from "@/components";
-import { NavLinkProps } from "@/components/NavLinks";
-import Image from "next/image";
 import React from "react";
-
+import Image from "next/image";
+import { NavLinks } from "@components";
+import navlinks from "public/navlinks.json";
+import { Footer } from "@ui";
 type Props = { children: React.ReactNode };
 
 const layout = ({ children }: Props) => {
-  const links: Array<NavLinkProps> = [
-    { name: "Home", href: "/" },
-    { name: "Qawafil", href: "#qawafil" },
-    { name: "Montij", href: "#montij" },
-    { name: "Human Resources", href: "#hr" },
-    { name: "Influencer", href: "#influencer" },
-    { name: "About", href: "#about" },
-    { name: "Contact us", href: "#contact" },
-  ];
   return (
     <>
-      <header className="header-wrapper">
-        <div className="header flex gap-x-4 md:gap-20">
-          <Image src={"/images/logo.png"} alt="logo" width={140} height={70} />
-          <NavLinks
-            links={links}
-            shape="link"
-            className="hidden md:flex md:gap-2 justify-between flex-1 bg-white"
-          />
+      <header className="container mx-auto">
+        <div className="main-header-wrapper container">
+          <div className="header flex gap-x-5 lg:gap-20 justify-between">
+            <Image
+              src={"/images/logo.png"}
+              alt="logo"
+              width={140}
+              height={70}
+            />
+            <NavLinks
+              links={navlinks.en}
+              shape="link"
+              className="hidden lg:flex md:gap-2 justify-between flex-1 items-center"
+            />
+            <Image
+              src={"/images/burger.png"}
+              alt="burger-menu"
+              width={40}
+              height={24}
+              className="lg:hidden"
+            />
+          </div>
         </div>
       </header>
 
       <main>{children}</main>
 
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

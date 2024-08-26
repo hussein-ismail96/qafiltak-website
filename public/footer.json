@@ -1,0 +1,86 @@
+{
+  "en": {
+    "footerLinks": [
+      {
+        "name": "Help Center",
+        "href": "/help-center"
+      },
+      {
+        "name": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "name": "Terms & Conditions",
+        "href": "/terms-conditions"
+      },
+      {
+        "name": "Accessability",
+        "href": "/accessability"
+      }
+    ],
+    "socialData": [
+      {
+        "src": "/images/footer/youtube.svg",
+        "href": "https://www.youtube.com",
+        "alt": "youtube"
+      },
+      {
+        "src": "/images/footer/x.svg",
+        "href": "https://www.x.com",
+        "alt": "x"
+      },
+      {
+        "src": "/images/footer/instagram.svg",
+        "href": "https://www.instagram.com",
+        "alt": "instagram"
+      },
+      {
+        "src": "/images/footer/facebook.svg",
+        "href": "https://www.facebook.com",
+        "alt": "facebook"
+      }
+    ]
+  },
+  "ar": {
+    "footerLinks": [
+      {
+        "name": "مركز المساعدة",
+        "href": "/help-center"
+      },
+      {
+        "name": " سياسة الخصوصية",
+        "href": "/privacy-policy"
+      },
+      {
+        "name": "الشروط والأحكام",
+        "href": "/terms-conditions"
+      },
+      {
+        "name": "إمكانية الوصول",
+        "href": "/accessability"
+      }
+    ],
+    "socialData": [
+      {
+        "src": "/images/footer/youtube.svg",
+        "href": "https://www.youtube.com",
+        "alt": "youtube"
+      },
+      {
+        "src": "/images/footer/x.svg",
+        "href": "https://www.x.com",
+        "alt": "x"
+      },
+      {
+        "src": "/images/footer/instagram.svg",
+        "href": "https://www.instagram.com",
+        "alt": "instagram"
+      },
+      {
+        "src": "/images/footer/facebook.svg",
+        "href": "https://www.facebook.com",
+        "alt": "facebook"
+      }
+    ]
+  }
+}

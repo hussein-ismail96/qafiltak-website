@@ -1,0 +1,15 @@
+.rounded-underline {
+  position: relative;
+  line-height: 59.97px;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #007396;
+    height: 6px;
+    width: 90%;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+  }
+}

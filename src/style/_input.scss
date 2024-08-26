@@ -1,0 +1,8 @@
+.input {
+  div[data-slot="input-wrapper"] {
+    
+    &[data-focus="true"] {
+      background-color: rgba($color: white, $alpha: 0.4) !important;
+    }
+  }
+}
