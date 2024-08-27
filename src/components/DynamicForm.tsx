@@ -59,7 +59,7 @@ export const DynamicForm = (props: IDynamicFormProps) => {
             <div key={field.name} className="pb-4">
               <Field
                 label={field.label}
-                className={`w-full p-2 rounded ${field.className}`}
+                className={field.className}
                 placeholder={field.placeholder}
                 as={Input}
                 type={field.type}

@@ -71,6 +71,51 @@
       ]
     }
   },
+  "montijin": {
+    "en": {
+      "title": "Montijen",
+      "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui exercitationem laborum explicabo omnis officia quod similique, eveniet minus repellendus cupiditate accusantium repudiandae maxime aliquid eaque quibusdam, sequi enim. Ad Lorem ipsum dolor sit amet consectetur",
+      "montijin": [
+        {
+          "name": "Montij Name",
+          "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
+          "imgSrc": "/images/home/director-1.png"
+        },
+        {
+          "name": "Montij Name",
+          "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
+          "imgSrc": "/images/home/director-1.png"
+        },
+        {
+          "name": "Montij Name",
+          "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
+          "imgSrc": "/images/home/director-1.png"
+        }
+      ]
+    },
+    "ar": {
+      "title": "Montijen",
+      "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui exercitationem laborum explicabo omnis officia quod similique, eveniet minus repellendus cupiditate accusantium repudiandae maxime aliquid eaque quibusdam, sequi enim. Ad Lorem ipsum dolor sit amet consectetur",
+      "montijin": [
+        {
+          "name": "Montij Name",
+          "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
+          "imgSrc": "/images/home/director-1.png"
+        },
+        {
+          "name": "Montij Name",
+          "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
+          "imgSrc": "/images/home/director-1.png"
+        },
+        {
+          "name": "Montij Name",
+          "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
+          "imgSrc": "/images/home/director-1.png"
+        }
+      ]
+    }
+  },
+
   "influencers": {
     "en": {
       "imgSrc": "/images/home/influencers/boy.png",
