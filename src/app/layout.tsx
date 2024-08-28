@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Cairo } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import AuthProvider from "@/AuthProvider";
 import "./globals.css";
 import "@style";
 
-const inter = Poppins({ weight: "400", subsets: ["latin"] });
+const cairo = Cairo({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: process.env.SITE_NAME,
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cairo.className}>
         <AuthProvider>
           <NextUIProvider>{children}</NextUIProvider>
         </AuthProvider>

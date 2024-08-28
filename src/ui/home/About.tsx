@@ -16,7 +16,7 @@ export const About = ({
     >
       <Image src={data.imgSrc} className="col-span-1" alt="" />
       <div className="flex flex-col justify-center col-span-1">
-        <h2 className="text-2xl mb-4">{data.header}</h2>
+        <h2 className="text-2xl text-heading font-bold mb-4">{data.header}</h2>
         <p>{data.description}</p>
       </div>
     </div>

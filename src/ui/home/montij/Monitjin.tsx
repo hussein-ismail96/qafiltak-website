@@ -12,8 +12,10 @@ export const Monitjin = ({
   };
 }) => {
   return (
-    <div className="experts-section container mx-auto">
-      <h3 className="text-primary font-bold title">{data.title}</h3>
+    <div className="montij-section container mx-auto">
+      <h1 className="text-heading text-3xl font-semibold rounded-underline mb-4 w-fit">
+        {data.title}
+      </h1>
       <p className="text-black py-4">{data.description}</p>
       <div className="container mx-auto flex">
         {data.montijin.map((item, key) => (

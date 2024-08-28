@@ -14,11 +14,11 @@ export const Qwafil = ({
 }) => {
   return (
     <div className="py-36">
-      <h1 className="text-secondary text-2xl rounded-underline  mb-4 w-fit">
+      <h1 className="text-heading text-3xl font-semibold rounded-underline mb-4 w-fit">
         {data.header}
       </h1>
       <div className="flex flex-col items-center gap-4 md:w-1/2 text-center mx-auto">
-        <h2 className="text-primary">{data.subHeader}</h2> 
+        <h2 className="text-secondary font-bold text-2xl ">{data.subHeader}</h2>
         <p>{data.description}</p>
         <Button className="bg-opacity-50 text-white bg-black w-fit flex items-center justify-between gap-10 rounded-s-md rounded-e-xl">
           <p>{data.cta}</p>

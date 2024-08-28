@@ -1,37 +1,36 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components";
+import { Button, Image } from "@/components";
 
 export const Montij = ({ data }: { data: any }) => {
   return (
-    <div className="flex expert-card items-end">
-      <Image alt="expert" src={data.imgSrc} width={300} height={300} />
-      <div className="expert-data text-black flex-col">
+    <div className="flex montij-card items-end">
+      <Image alt="montij" src={data.imgSrc} className="montij-img" />
+      <div className="montij-data text-black flex-col">
         <h5 className="font-bold">{data.name}</h5>
         <p>{data.description}</p>
-        <Button className="flex p-0 gap-4 mt-2">
+        <Button className="bg-opacity-50 text-black bg-black w-fit flex items-center justify-between gap-10 rounded-s-md rounded-e-xl">
           <p>Visit Montij</p>
           <Image
+            src={"/images/svgs/black-arrow.svg"}
+            width={24}
+            height={24}
             alt="arrow"
-            src={"/images/home/arrow.svg"}
-            width={20}
-            height={20}
           />
         </Button>
         <div className="flex gap-3 mt-2">
           <Link href="https://www.facebook.com" target="_blank">
             <Image
-              alt="expert"
-              src="/images/about/facebook.svg"
+              alt="montij"
+              src="/images/home/montij/facebook.svg"
               width={48}
               height={48}
             />
           </Link>
           <Link href="https://www.linkedin.com" target="_blank">
             <Image
-              alt="expert"
-              src="/images/about/in.svg"
+              alt="montij"
+              src="/images/home/montij/linkedin.svg"
               width={48}
               height={48}
             />

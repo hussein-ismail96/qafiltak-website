@@ -1,29 +1,29 @@
-.experts-section {
-  position: relative;
-  &::after {
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    content: "";
-    background-color: #333333;
-    height: 15%;
-    width: 100%;
-  }
-  .expert-card {
-    mix-blend-mode: luminosity;
+.montij-section {
+  .montij-card {
+    filter: grayscale(100%);
     flex-grow: 1;
-    height: 100%;
-    transition: all 1.5s linear;
-    .expert-data {
-      opacity: 0;
+    transition: all 0.5s linear;
+    .montij-img {
+      img {
+        height: 100%;
+        width: 100%;
+        transition: all 0.5s linear;
+      }
+    }
+    .montij-data {
+      display: none;
       transition: all 0.5s linear;
     }
     &:hover {
-      mix-blend-mode: normal;
-      height: calc(100% - 20px);
-
-      .expert-data {
-        opacity: 1;
+      filter: grayscale(0%);
+      .montij-img {
+        img {
+          height: calc(100% + 10%) !important;
+          width: calc(100% + 10%) !important;
+        }
+      }
+      .montij-data {
+        display: flex;
       }
     }
   }

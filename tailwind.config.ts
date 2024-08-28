@@ -16,19 +16,17 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
-    colors: {
-      primary: "#007396",
-      secondary: "#1B325E",
-      white: "#fff",
-      black: "#000",
-      gray: "#D9D9D9",
+      colors: {
+        primary: "#007396",
+        secondary: "#1E39A1",
+        tertiary: "#80B9CB",
+        heading: "#1B325E",
+        white: "#fff",
+        black: "#000",
+        gray: "#D9D9D9",
+      },
     },
   },
-  plugins: [
-    nextui({
-      addCommonColors: true,
-    }),
-  ],
+  plugins: [nextui({})],
 };
 export default config;
