@@ -5,7 +5,7 @@ import { Button } from "./button/Button";
 import { Input } from "./Input";
 import { IButtonProps } from "./button/buttonProps";
 
-interface IFieldProps {
+export interface IFieldProps {
   type: string;
   as?: string;
   name: string;

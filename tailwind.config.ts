@@ -24,6 +24,7 @@ const config: Config = {
         white: "#fff",
         black: "#000",
         gray: "#D9D9D9",
+        btn: "#404040",
       },
     },
   },
