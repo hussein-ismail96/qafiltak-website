@@ -1,6 +1,7 @@
 import React from "react";
 import {
   About,
+  ContactUs,
   HumanResources,
   Influencers,
   MainBanner,
@@ -26,6 +27,7 @@ export default function Home() {
           <About data={data.about.en} />
         </div>
       </div>
+      <ContactUs data={data.contact} />
     </React.Fragment>
   );
 }

@@ -5,7 +5,7 @@ import data from "public/footer.json";
 
 export const Footer = () => {
   return (
-    <div className="container mx-auto flex justify-center md:justify-between py-3 flex-wrap gap-4">
+    <div className="container mx-auto flex justify-center md:justify-between py-6 flex-wrap gap-4">
       <div className="flex gap-4">
         {data.en.socialData.map((item, key) => (
           <Link href={item.href} key={key}>

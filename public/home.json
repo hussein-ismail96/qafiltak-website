@@ -131,5 +131,15 @@
       "header": "What we do ?",
       "description": "Lorem ipsum dolor sit amet consectetur. Molestie volutpat integer habitant et parturient nisl pellentesque sem. In posuere etiam aenean integer suspendisse. Nam aliquam in aenean vel rhoncus vitae. Enim leo morbi fermentum sit ultrices lacus mi. Nunc pharetra eleifend mi duis sed. A at ut justo montes nibh egestas lorem lectus ac. Adipiscing aliquam id sagittis urna suspendisse turpis venenatis consequat. Arcu amet fringilla viverra quis morbi. Mi sagittis ut commodo cursus sagittis convallis pellentesque in. Neque venenatis ac hac sed velit blandit eget nisl tellus. Mattis aliquet quis sit tincidunt nisl ipsum sem."
     }
+  },
+  "contact": {
+    "header": "We would like to hear from you!!",
+    "contactDetails": {
+      "location": "Road 128, DUMMY DATA EXIST HERE Area, Road 00, Al mantika 30024.",
+      "phoneNumber": "+11111111111",
+      "email": "email@email.com",
+      "website": "www.web.com"
+    },
+    "map": ""
   }
 }
