@@ -107,7 +107,7 @@ export const AuthGlobe = () => {
   return (
     <Globe
       data={{
-        globeImageUrl: "/images/login/earth.png",
+        globeImageUrl: "/images/login/earth-night.jpg",
         labelText: "label",
         backgroundColor: "rgba(0,0,0,0)",
         labelSize: 1.7,
