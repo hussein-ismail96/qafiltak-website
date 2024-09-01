@@ -69,6 +69,7 @@ export const LoginForm = () => {
       redirect: false,
     });
     if (res?.ok) {
+      document.querySelector(".invalid")?.classList.add("hidden");
       location.href = "/";
     } else {
       document.querySelector(".invalid")?.classList.remove("hidden");
