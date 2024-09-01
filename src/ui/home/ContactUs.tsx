@@ -25,7 +25,7 @@ export const ContactUs = ({
       type: "text",
       placeholder: "Name",
       label: "Name",
-      className: "mb-4 px-8",
+      className: "mb-4",
     },
 
     {
@@ -33,13 +33,13 @@ export const ContactUs = ({
       type: "email",
       placeholder: "Email",
       label: "Email",
-      className: "mb-4 px-8",
+      className: "mb-4",
     },
     {
       name: "subject",
       type: "text",
       label: "Subject ",
-      className: "mb-4 px-8",
+      className: "mb-4",
       id: "remember",
     },
   ];
@@ -55,7 +55,7 @@ export const ContactUs = ({
   };
 
   const clickMove = () => {
-    const submit = document.querySelector("contact-submit");
+    const submit = document.querySelector(".contact-submit");
     submit?.classList.add("move");
   };
   const actionComponent = ({ children }: { children: any }) => (
@@ -83,7 +83,9 @@ export const ContactUs = ({
               {data.header}
             </h1>
             <DynamicForm
-              className="w-full"
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              className="w-3/4"
               fields={fields}
               onSubmit={() => clickMove()}
               ActionComponent={actionComponent}
