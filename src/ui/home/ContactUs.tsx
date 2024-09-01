@@ -95,22 +95,22 @@ export const ContactUs = ({
         <div className="flex flex-col items-center">
           <div className="md:w-2/3">
             <div className="flex gap-2 mb-4">
-              <Image src={"/images/svgs/location.svg"} />
+              <Image src={"/images/svgs/location.svg"} alt="location" />
               <p>{data.contactDetails.location}</p>
             </div>
             <div className="flex gap-2 mb-4">
-              <Image src={"/images/svgs/phone.svg"} />
+              <Image src={"/images/svgs/phone.svg"} alt="phone" />
               <p>{data.contactDetails.phoneNumber}</p>
             </div>
             <div className="flex gap-2 mb-4">
-              <Image src={"/images/svgs/location.svg"} />
+              <Image src={"/images/svgs/location.svg"} alt="email" />
               <p>{data.contactDetails.email}</p>
             </div>
             <div className="flex gap-2 mb-4">
-              <Image src={"/images/svgs/location.svg"} />
+              <Image src={"/images/svgs/location.svg"} alt="website" />
               <p>{data.contactDetails.website}</p>
             </div>
-            <Image src={"/images/home/map.jpg"} />
+            <Image src={"/images/home/map.jpg"} alt="map" />
           </div>
         </div>
       </div>
@@ -122,7 +122,12 @@ export const ContactUs = ({
                 GET THE APP FOR MORE EXPERIENCE
               </h2>
               <div className="flex gap-4 my-8">
-                <Image src={"/images/home/qr.png"} width={105} height={105} />
+                <Image
+                  src={"/images/home/qr.png"}
+                  width={105}
+                  height={105}
+                  alt=""
+                />
                 <div className="flex flex-col justify-between">
                   <p>Scan QR code</p>
                   <p>Track your order</p>
@@ -136,11 +141,13 @@ export const ContactUs = ({
                     src={"/images/home/app-store.png"}
                     width={135}
                     height={40}
+                    alt=""
                   />
                   <Image
                     src={"/images/home/google-play.png"}
                     width={135}
                     height={40}
+                    alt=""
                   />
                 </div>
               </div>
