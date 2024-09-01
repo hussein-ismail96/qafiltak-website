@@ -62,11 +62,17 @@ export const LoginForm = () => {
     password: Yup.string().required("Required"),
   });
   const onSubmit = async (values: FormikValues) => {
-    await signIn("credentials", {
+    const res = await signIn("credentials", {
       username: values.userName,
       password: values.password,
       callbackUrl: "/",
+      redirect: false,
     });
+    if (res?.ok) {
+      location.href = "/";
+    } else {
+      document.querySelector(".invalid")?.classList.remove("hidden");
+    }
   };
 
   const initialValues = {
@@ -75,18 +81,23 @@ export const LoginForm = () => {
   };
 
   return (
-    <DynamicForm
-      fields={fields}
-      onSubmit={onSubmit}
-      validationSchema={validationSchema}
-      initialValues={initialValues}
-      className="text-white"
-      submitButton={{
-        className: "text-white w-full",
-        text: "Login to your account",
-        radius: "sm",
-        color: "primary",
-      }}
-    />
+    <div>
+      <p className="invalid hidden text-red-500 text-center pb-8">
+        Invaild username or password
+      </p>
+      <DynamicForm
+        fields={fields}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+        initialValues={initialValues}
+        className="text-white"
+        submitButton={{
+          className: "text-white w-full",
+          text: "Login to your account",
+          radius: "sm",
+          color: "primary",
+        }}
+      />
+    </div>
   );
 };
