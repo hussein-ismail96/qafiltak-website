@@ -1,9 +1,7 @@
 "use client";
+import React from "react";
 import { Field, Form, Formik, ErrorMessage } from "formik";
-import React, { ReactNode } from "react";
-import { Button } from "./button/Button";
-import { Input } from "./Input";
-import { IButtonProps } from "./button/buttonProps";
+import { Button, Input, IButtonProps } from "@components";
 
 export interface IFieldProps {
   type: string;
@@ -49,14 +47,14 @@ export const DynamicForm = (props: IDynamicFormProps) => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ values, handleSubmit, errors }) => (
+      {({ values, handleSubmit, errors, handleBlur, }) => (
         <Form
           onSubmit={handleSubmit}
           className={`my-4 ${className}`}
           autoComplete="off"
         >
-          {fields.map((field) => (
-            <div key={field.name} className="pb-4">
+          {fields.map((field, index) => (
+            <React.Fragment key={index}>
               <Field
                 label={field.label}
                 className={field.className}
@@ -64,6 +62,7 @@ export const DynamicForm = (props: IDynamicFormProps) => {
                 as={Input}
                 type={field.type}
                 options={field.options}
+                onblur={handleBlur}
                 name={field.name}
                 labelPlacement={field.labelPlacement ?? "outside"}
                 id={field.id}
@@ -75,7 +74,7 @@ export const DynamicForm = (props: IDynamicFormProps) => {
               <span className="text-red-500">
                 <ErrorMessage name={field.name} />
               </span>
-            </div>
+            </React.Fragment>
           ))}
           {ActionComponent ? (
             <ActionComponent>

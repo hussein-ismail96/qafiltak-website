@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import nextIntl from "next-intl/plugin";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
-export default nextConfig;
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const nextConfig = {
+  reactStrictMode: false,
+  output: "standalone",
+};
+
+const withNextIntl = nextIntl("./src/i18n.ts");
+export default bundleAnalyzer(withNextIntl(nextConfig));
