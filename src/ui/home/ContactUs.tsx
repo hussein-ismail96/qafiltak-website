@@ -69,7 +69,7 @@ export const ContactUs = ({
           <p className="bg-neutral-200 justify-center text-neutral-400 px-4 mx-1 rounded-lg h-full flex items-center w-1/3">
             SUBMIT
           </p>
-          <Image src={"/images/svgs/arrows.svg"} width={70} height={24} />
+          <Image src={"/images/svgs/arrows.svg"} width={70} height={24} alt=""/>
         </div>
       </div>
     </Button>
@@ -155,7 +155,7 @@ export const ContactUs = ({
           </div>
         </div>
         <div className="px-16">
-          <Image src={"/images/home/mobiles.png"} />
+          <Image src={"/images/home/mobiles.png"} alt=""/>
         </div>
       </div>
     </div>
