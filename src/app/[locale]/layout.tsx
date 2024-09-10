@@ -24,14 +24,14 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={params.locale} messages={messages}>
-      <AuthProvider>
-        <html lang="en">
-          <body className={cairo.className}>
+    <html lang="en">
+      <body className={cairo.className}>
+        <NextIntlClientProvider locale={params.locale} messages={messages}>
+          <AuthProvider>
             <NextUIProvider>{children}</NextUIProvider>
-          </body>
-        </html>
-      </AuthProvider>
-    </NextIntlClientProvider>
+          </AuthProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
