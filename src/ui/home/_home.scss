@@ -36,3 +36,15 @@
     left: 0;
   }
 }
+
+[dir="rtl"] {
+  .main-banner {
+    height: 120vh;
+    .main-banner-content {
+      h1 {
+        line-height: 96px;
+        letter-spacing: normal;
+      }
+    }
+  }
+}

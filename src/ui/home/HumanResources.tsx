@@ -1,7 +1,7 @@
 import { Button, Image } from "@/components";
 import React from "react";
 
-export const HumanResources = () => {
+export const HumanResources = ({data}:{data:{header:string,description:string}}) => {
   return (
     <div
       className="py-36"

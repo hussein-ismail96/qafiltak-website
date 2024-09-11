@@ -13,3 +13,11 @@
     border-end-end-radius: 10px;
   }
 }
+[dir="rtl"] {
+  img[alt="arrow"] {
+    transform: rotate(180deg);
+  }
+}
+.pointer {
+  cursor: pointer;
+}

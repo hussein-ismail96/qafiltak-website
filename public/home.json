@@ -7,9 +7,9 @@
       "bgImage": "/images/home/main.jpg"
     },
     "ar": {
-      "header": "Website 3 line short description here",
+      "header": "وصف قصير للموقع الإلكتروني من 3 أسطر هنا",
       "subHeader": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "cta": "Discover more",
+      "cta": "اكتشف اكثر",
       "bgImage": "/images/home/main.jpg"
     }
   },
@@ -43,10 +43,10 @@
       ]
     },
     "ar": {
-      "header": "Qwafil",
-      "subHeader": "Discover your dreams",
+      "header": "قوافل",
+      "subHeader": "اكتشف احلامك",
       "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
-      "cta": "Discover all qwafil",
+      "cta": "اكتشف كل القوافل",
       "departments": [
         {
           "name": "Medical",
@@ -89,16 +89,16 @@
       ]
     },
     "ar": {
-      "title": "Montijen",
+      "title": "منتجين",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui exercitationem laborum explicabo omnis officia quod similique, eveniet minus repellendus cupiditate accusantium repudiandae maxime aliquid eaque quibusdam, sequi enim. Ad Lorem ipsum dolor sit amet consectetur",
       "montijin": [
         {
-          "name": "Montij Name",
+          "name": "اسم المنتج",
           "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
           "imgSrc": "/images/home/montij/1.png"
         },
         {
-          "name": "Montij Name",
+          "name": "اسم المنتج",
           "description": "description lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, sapiente.",
           "imgSrc": "/images/home/montij/1.png"
         }
@@ -118,6 +118,16 @@
       "header": "HEADER ABOUT 2 LINES DESCRIPTION ABOUT INFLUENCER",
       "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur.",
       "cta": "GET IN TOUCH"
+    }
+  },
+  "humanResources": {
+    "en": {
+      "header": "Our Human resources",
+      "description": "Lorem ipsum dolor sit amet consectetur. Et donec tincidunt sit imperdiet proin amet lectus. Justo at volutpat egestas est. Lorem ipsum dolor sit amet consectetur."
+    },
+    "ar": {
+      "header": "مواردنا البشرية",
+      "description": "لوريم إيبسوم هو نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولا يزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي لأخذها كعينة على صناعة الطباعة. خمسة قرون من الزمن لم تقضِ على هذا النص، بل إنه حتى دخل إلى أنظمة النشر الإلكتروني دون أن يتغير. انتشر لوريم إيبسوم بشكل واسع في ستينيات القرن الماضي بعد أن قامت شركات التصميم باستخدامه في التنضيد الجاهز."
     }
   },
   "about": {

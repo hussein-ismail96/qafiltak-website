@@ -62,9 +62,9 @@ export const DynamicForm = (props: IDynamicFormProps) => {
                 as={Input}
                 type={field.type}
                 options={field.options}
-                onblur={handleBlur}
+                onBlur={handleBlur}
                 name={field.name}
-                labelPlacement={field.labelPlacement ?? "outside"}
+                labelplacement={field.labelPlacement ?? "outside"}
                 id={field.id}
                 size={field.size}
                 value={field.value}

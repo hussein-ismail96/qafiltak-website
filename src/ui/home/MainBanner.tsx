@@ -14,6 +14,7 @@ export const MainBanner = ({
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
+      id=""
     >
       <div className="main-banner-content flex flex-col items-center md:w-2/3 xl:w-1/2 justify-center text-center container mx-auto">
         <h1 className="text-5xl font-bold my-8">{header}</h1>
