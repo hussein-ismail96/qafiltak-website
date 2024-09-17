@@ -4,6 +4,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import AuthProvider from "@/AuthProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { StoreProvider } from "@/store/StoreProvider";
 
 const cairo = Cairo({ weight: "400", subsets: ["latin"] });
 
@@ -22,14 +23,16 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={params.locale} dir={params.locale === "en" ? "ltr" : "rtl"}>
-      <body className={cairo.className}>
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
-          <AuthProvider>
-            <NextUIProvider>{children}</NextUIProvider>
-          </AuthProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang={params.locale} dir={params.locale === "en" ? "ltr" : "rtl"}>
+        <body className={cairo.className}>
+          <NextIntlClientProvider locale={params.locale} messages={messages}>
+            <AuthProvider>
+              <NextUIProvider>{children}</NextUIProvider>
+            </AuthProvider>
+          </NextIntlClientProvider>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
