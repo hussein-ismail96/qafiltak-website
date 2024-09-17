@@ -5,6 +5,7 @@ import {
   SelectItem as Select,
   Radio as NextUIRadio,
   Checkbox as NextUICheckbox,
+  Textarea,
 } from "@nextui-org/react";
 
 interface InputProps {
@@ -16,7 +17,8 @@ interface InputProps {
     | "password"
     | "select"
     | "radio"
-    | "checkbox";
+    | "checkbox"
+    | "textarea";
   name: string;
   id?: string;
   label?: string;
@@ -46,6 +48,11 @@ export const Input = (props: InputProps) => {
           label={label}
           {...rest}
         />
+      );
+      break;
+    case "textarea":
+      input = (
+        <Textarea {...rest} className={`input ${className}`} label={label} />
       );
       break;
     case "select":

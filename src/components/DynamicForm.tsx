@@ -68,7 +68,7 @@ export const DynamicForm = (props: IDynamicFormProps) => {
                 id={field.id}
                 size={field.size}
                 value={field.value}
-                startContent={field.startContent}
+                startContent={field.startContent} 
                 endContent={field.endContent}
               />
               <span className="text-red-500">

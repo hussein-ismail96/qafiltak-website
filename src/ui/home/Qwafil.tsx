@@ -13,7 +13,7 @@ export const Qwafil = ({
   };
 }) => {
   return (
-    <div className="py-36">
+    <div className="my-10 md:my-36">
       <h1 className="text-heading text-3xl font-semibold rounded-underline mb-4 w-fit">
         {data.header}
       </h1>
@@ -30,11 +30,11 @@ export const Qwafil = ({
           />
         </Button>
       </div>
-      <div className="flex items-center justify-between gap-14 mt-16 overflow-x-auto pb-36">
+      <div className="flex gap-14 mt-16 overflow-x-auto pb-5">
         {data.departments.map((item, key) => (
-          <div className="w-1/4 relative overflow-visible" key={key}>
+          <div className="qwafel-card" key={key}>
             <Image src={item.imgSrc} alt={item.name} className="rounded-full" />
-            <div className="text-center absolute top-3/4 p-4 left-0 w-full bg-white border-1 border-gray">
+            <div className="description text-center p-4 w-full bg-white border-1 border-gray">
               <h6 className="font-bold mb-3">{item.name}</h6>
               <p className="text-base">{item.description}</p>
             </div>

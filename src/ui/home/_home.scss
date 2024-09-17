@@ -36,7 +36,29 @@
     left: 0;
   }
 }
+.qwafel-card {
+  min-width: 214px;
+  .description {
+    margin-top: -2rem;
+    z-index: 100;
+    position: relative;
+    height: 60px;
+    transition: 0.2s all linear;
+    overflow: hidden;
+  }
+  &:hover {
+    .description {
+      height: 140px;
 
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-line-clamp: 3; /* Number of lines to show */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      white-space: normal;
+    }
+  }
+}
 [dir="rtl"] {
   .main-banner {
     height: 120vh;
