@@ -23,16 +23,16 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <StoreProvider>
-      <html lang={params.locale} dir={params.locale === "en" ? "ltr" : "rtl"}>
-        <body className={cairo.className}>
-          <NextIntlClientProvider locale={params.locale} messages={messages}>
-            <AuthProvider>
+    <html lang={params.locale} dir={params.locale === "en" ? "ltr" : "rtl"}>
+      <body className={cairo.className}>
+        <NextIntlClientProvider locale={params.locale} messages={messages}>
+          <AuthProvider>
+            <StoreProvider>
               <NextUIProvider>{children}</NextUIProvider>
-            </AuthProvider>
-          </NextIntlClientProvider>
-        </body>
-      </html>
-    </StoreProvider>
+            </StoreProvider>
+          </AuthProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
