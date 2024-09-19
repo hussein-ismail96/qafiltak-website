@@ -41,16 +41,42 @@ export const options: NextAuthOptions = {
   },
   callbacks: {
     async jwt({ token, user, account, profile, trigger, session }) {
-      return { ...token, ...user };
+      console.group("---------------------jwt---------------------");
+      console.log("token ------> ", token);
+      console.log("user ------> ", user);
+      console.log("account ------> ", account);
+      console.log("profile ------> ", profile);
+      console.log("trigger ------> ", trigger);
+      console.log("session ------> ", session);
+      console.groupEnd();
+      return { ...token, ...user, token :'this is test token'};
     },
-    async signIn({ user, account, profile, email, credentials }) {
-      const isAllowedToSignIn = true;
-      if (isAllowedToSignIn) {
-        return true;
-      } else {
-        // Return false to display a default error message
-        return false;
-      }
+    session({ session, token, user }) {
+      console.group("---------------------session---------------------");
+      console.log("session ------> ", session);
+      console.log("token ------> ", token);
+      console.log("user ------> ", user);
+      console.groupEnd();
+      return session;
+    },
+  },
+  logger: {
+    error(code, metadata) {
+      console.error(
+        `---------------> next-auth-${code}:`,
+        JSON.stringify({ code, metadata: JSON.stringify(metadata) })
+      );
+    },
+    warn(code) {
+      console.warn(
+        `---------------> next-auth-warning: ${JSON.stringify(code)}`
+      );
+    },
+    debug(code, metadata) {
+      console.debug(
+        `---------------> next-auth-${code}:`,
+        JSON.stringify({ code, metadata: JSON.stringify(metadata) })
+      );
     },
   },
 };

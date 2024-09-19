@@ -1,29 +1,24 @@
-import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
-import { NextUIProvider } from "@nextui-org/react";
-import AuthProvider from "@/AuthProvider";
+import { ReactNode } from 'react';
+import { Metadata } from 'next';
+
 import "./globals.css";
 import "@style";
 
-const cairo = Cairo({ weight: "400", subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: process.env.SITE_NAME,
-  description: process.env.DESCRIPTION,
+type Props = {
+  children: ReactNode;
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body className={cairo.className}>
-        <AuthProvider>
-          <NextUIProvider>{children}</NextUIProvider>
-        </AuthProvider>
-      </body>
-    </html>
-  );
-}
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Qafiltak`,
+    default: 'TOT',
+  },
+};
+
+// Even though this component is just passing its children through, the presence
+// of this file fixes an issue in Next.js 13.3.0 where link clicks that switch
+// the locale would otherwise be ignored.
+const RootLayout = ({ children }: Props) => {
+  return children;
+};
+export default RootLayout;

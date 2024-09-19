@@ -1,35 +1,55 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextRequest } from "next/server";
+import { withAuth } from "next-auth/middleware";
+import createIntlMiddleware from "next-intl/middleware";
 import { getToken } from "next-auth/jwt";
+import { locales, localePrefix, defaultLocale } from "./navigation";
 
-export async function middleware(req: NextRequest) {
-  // Get the token from the request
-  const token = await getToken({ req, secret: process.env.AUTH_SECRET });
+export const publicPages = [
+  "/403",
+  "/505",
+  "/offline",
+  "/auth/login",
+  ...locales.map((l) => `/${l}/auth/login`),
+];
 
-  // Define the paths where this middleware should apply
-  const { pathname } = req.nextUrl;
+const intlMiddleware = createIntlMiddleware({
+  locales,
+  localePrefix,
+  defaultLocale,
+});
 
-  // If the user has a token
-  if (token) {
-    // Redirect to the home page if trying to access the login page
-    if (pathname.includes("/auth")) {
-      return NextResponse.redirect(new URL("/", req.url));
-    }
-    // Allow access to the home page or other authenticated routes
-    return NextResponse.next();
+const authMiddleware = withAuth((req) => intlMiddleware(req), {
+  callbacks: {
+    authorized: ({ token }) => token != null,
+  },
+});
+
+export default async function middleware(req: NextRequest) {
+  console.log("req --> ", JSON.stringify(req.headers));
+  // Create the regular expression pattern
+  const regexPattern = new RegExp(`^(${publicPages.join("|")})?$`, "i");
+
+  req.headers.set(
+    "Accept-Language",
+    req.cookies?.get("NEXT_LOCALE")?.value ?? defaultLocale
+  );
+
+  const isPublicPage = regexPattern.test(req.nextUrl.pathname);
+  console.log("----------------------------------");
+  console.log("pathname -----> ", req.nextUrl.pathname);
+  console.log("isPublicPage -----> ", isPublicPage);
+  console.log("----------------------------------");
+
+  if (isPublicPage) {
+    return intlMiddleware(req);
+  } else {
+    return (authMiddleware as any)(req);
   }
-
-  // If no token is present, allow access to the login page but redirect others
-  if (pathname !== "/auth/login") {
-    const url = req.nextUrl.clone();
-    url.pathname = "/auth/login";
-    return NextResponse.redirect(url);
-  }
-
-  // Allow access to the login page for unauthenticated users
-  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/auth/login", "/auth/sign-up", "/"],
+  // Skip all paths that should not be internationalized
+  matcher: [
+    "/((?!api|_next|_next/static|_next/assets|assets|_next/locales|favicon.ico|apple-touch-icon.png|favicon.svg|images|icons|403|manifest.*\\..*).*)",
+  ],
 };
