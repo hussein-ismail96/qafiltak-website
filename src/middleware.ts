@@ -4,7 +4,13 @@ import createIntlMiddleware from "next-intl/middleware";
 import { getToken } from "next-auth/jwt";
 import { locales, localePrefix, defaultLocale } from "./navigation";
 
-export const publicPages = ["/403", "/505", "/offline", "/auth/login"];
+export const publicPages = [
+  "/403",
+  "/505",
+  "/offline",
+  "/auth/login",
+  ...locales.map((l) => `/${l}/auth/login`),
+];
 
 const intlMiddleware = createIntlMiddleware({
   locales,
@@ -29,7 +35,7 @@ export default async function middleware(req: NextRequest) {
   );
 
   const isPublicPage = regexPattern.test(req.nextUrl.pathname);
- console.log("----------------------------------");
+  console.log("----------------------------------");
   console.log("pathname -----> ", req.nextUrl.pathname);
   console.log("isPublicPage -----> ", isPublicPage);
   console.log("----------------------------------");
@@ -47,4 +53,3 @@ export const config = {
     "/((?!api|_next|_next/static|_next/assets|assets|_next/locales|favicon.ico|apple-touch-icon.png|favicon.svg|images|icons|403|manifest.*\\..*).*)",
   ],
 };
-
